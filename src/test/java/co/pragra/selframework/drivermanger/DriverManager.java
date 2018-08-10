@@ -12,6 +12,8 @@ public class DriverManager {
         System.setProperty("webdriver.chrome.driver", DriverConfig.getProperty("chrome.executable.path"));
         if(DriverConfig.getProperty("browser.type").equalsIgnoreCase("chrome")) {
                 driver = new ChromeDriver();
+        }else{
+            driver = new ChromeDriver();
         }
     }
 
