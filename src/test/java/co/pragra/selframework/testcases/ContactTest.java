@@ -2,13 +2,15 @@ package co.pragra.selframework.testcases;
 
 import co.pragra.selframework.config.DriverConfig;
 import co.pragra.selframework.drivermanger.DriverManager;
+import co.pragra.selframework.listeners.ScreenShotListener;
 import co.pragra.selframework.pageobjects.ContactPage;
 import co.pragra.selframework.testdata.ExcelReader;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
 import java.util.Iterator;
-
+@Listeners(ScreenShotListener.class)
 public class ContactTest {
 
     ExcelReader reader;
@@ -33,6 +35,7 @@ public class ContactTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        Assert.fail();
     }
 
     @AfterMethod

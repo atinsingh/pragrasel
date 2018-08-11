@@ -3,6 +3,7 @@ package co.pragra.selframework.drivermanger;
 import co.pragra.selframework.config.DriverConfig;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Listeners;
 
 public class DriverManager {
     private static WebDriver driver;
