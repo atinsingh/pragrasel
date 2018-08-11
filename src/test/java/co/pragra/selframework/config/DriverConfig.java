@@ -3,6 +3,8 @@ package co.pragra.selframework.config;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public class DriverConfig {
@@ -10,8 +12,10 @@ public class DriverConfig {
 
     protected DriverConfig(){
         try{
-            //getClass().getClassLoader().getResource("config/driver.config");
-            InputStream in = new FileInputStream("/Users/atinsingh/OneDrive/pragra/selframework/src/test/resources/config/driver.config");
+           Path path =   Paths.get("src","test","resources","config", "driver.config");
+            System.out.println(path.toAbsolutePath());
+            //InputStream in = new FileInputStream(path.toAbsolutePath().toString());
+            InputStream in = new FileInputStream(path.toFile());
             properties = new Properties();
             properties.load(in);
         }catch (IOException ex){
