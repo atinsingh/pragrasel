@@ -11,7 +11,7 @@ public class DriverConfig {
     protected DriverConfig(){
         try{
             //getClass().getClassLoader().getResource("config/driver.config");
-            InputStream in = new FileInputStream("/Users/atinsingh/OneDrive/pragra/selframework/src/test/resources/config/driver.config");
+            InputStream in = new FileInputStream("C:/Users/shuchi/git/pragrasel/src/test/resources/config/driver.config");
             properties = new Properties();
             properties.load(in);
         }catch (IOException ex){

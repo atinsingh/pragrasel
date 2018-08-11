@@ -11,8 +11,8 @@ public class SelectorConfig {
     private SelectorConfig(){
         try{
             //getClass().getClassLoader().getResource("config/driver.config");
-            InputStream in = new FileInputStream("/Users/atinsingh/OneDrive/pragra/selframework/src/test/resources/config/selector" +
-                    ".config");
+            InputStream in = new FileInputStream("C:/Users/shuchi/git/pragrasel/src/test/resources/config/selector.config");
+            
             properties = new Properties();
             properties.load(in);
         }catch (IOException ex){

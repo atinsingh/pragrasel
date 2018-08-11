@@ -14,45 +14,42 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-
 public class ExcelReader {
-    // Where is my excel file
-    private String filename;
-    private List<Object[]> testData;
+	// Where is my excel file
+	private String filename;
+	private List<Object[]> testData;
 
-    public ExcelReader(String filename) {
-        this.filename = filename;
-        this.testData = new ArrayList<>();
-        try {
-            FileInputStream inputStream = new FileInputStream(new File(filename));
-            Workbook workbook = new XSSFWorkbook(inputStream);
-            Sheet contactTestSheet = workbook.getSheet("ContactTest");
-            Iterator<Row> rows = contactTestSheet.iterator();
+	public ExcelReader(String filename) {
+		this.filename = filename;
+		this.testData = new ArrayList<>();
+		try {
+			FileInputStream inputStream = new FileInputStream(new File(filename));
+			Workbook workbook = new XSSFWorkbook(inputStream);
+			Sheet contactTestSheet = workbook.getSheet("ContactTest");
+			Iterator<Row> rows = contactTestSheet.iterator();
+			// loop trough all rows
+			rows.next();
+			while (rows.hasNext()) {
+				Row currentRow = rows.next();
 
-            //loop trough all rows
-            rows.next();
-            while (rows.hasNext()){
-                Row currentRow = rows.next();
-                Iterator<Cell> cells = currentRow.iterator();
-                List<String> celllist = new ArrayList<>();
-                while(cells.hasNext()){
-                    Cell currentCell = cells.next();
-                    celllist.add(currentCell.getStringCellValue());
-                    System.out.println(currentCell.getStringCellValue());
-                }
-                testData.add(celllist.toArray());
-            }
+				Iterator<Cell> cells = currentRow.iterator();
+				List<String> celllist = new ArrayList<>();
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }catch (IOException ex){
-            ex.printStackTrace();
-        }
-    }
+				while (cells.hasNext()) {
+					Cell currentCell = cells.next();
+					celllist.add(currentCell.getStringCellValue());
+					System.out.println(currentCell.getStringCellValue());
+				}
+				testData.add(celllist.toArray());
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+	}
 
-    public List<Object[]> getTestData() {
-        return testData;
-    }
+	public List<Object[]> getTestData() {
+		return testData;
+	}
 }
-
-
