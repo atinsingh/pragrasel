@@ -5,6 +5,9 @@ import co.pragra.selframework.drivermanger.DriverManager;
 import co.pragra.selframework.listeners.ScreenShotListener;
 import co.pragra.selframework.pageobjects.ContactPage;
 import co.pragra.selframework.testdata.ExcelReader;
+import org.apache.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
@@ -12,6 +15,8 @@ import org.testng.annotations.*;
 import java.util.Iterator;
 @Listeners(ScreenShotListener.class)
 public class ContactTest {
+
+    private  static Logger logger  = Logger.getLogger(ContactTest.class);
 
     ExcelReader reader;
     ContactPage contactPage;
@@ -29,13 +34,19 @@ public class ContactTest {
 
     @Test(dataProvider = "contactData")
     public void  tc1(String name, String email, String subject, String message){
+
+        logger.info("Passing follwing data name " + name);
+
+
         contactPage.enterName(name).enterEmail(email).enterMessage(message).enterSubject(subject);
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         Assert.fail();
+
     }
 
     @AfterMethod

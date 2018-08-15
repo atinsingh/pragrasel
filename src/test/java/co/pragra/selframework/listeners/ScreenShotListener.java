@@ -3,6 +3,7 @@ package co.pragra.selframework.listeners;
 import co.pragra.selframework.drivermanger.DriverManager;
 import co.pragra.selframework.utils.Utils;
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class ScreenShotListener implements ITestListener {
+
+    Logger logger = Logger.getLogger(ScreenShotListener.class);
+
     @Override
     public void onTestStart(ITestResult result) {
 
@@ -38,6 +42,7 @@ public class ScreenShotListener implements ITestListener {
         }catch (IOException ex){
 
         }
+        logger.error(String.format("Test Case with test name %s failed" ,result.getName()));
 
     }
 

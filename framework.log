@@ -1,0 +1,5 @@
+22:19:33,459  INFO co.pragra.selframework.testcases.ContactTest<strong>{1}</strong>:38 - Passing follwing data name Karan
+22:19:37,017 ERROR co.pragra.selframework.listeners.ScreenShotListener<strong>{1}</strong>:45 - Test Case with test name tc1 failed
+22:19:37,297  INFO co.pragra.selframework.testcases.ContactTest<strong>{1}</strong>:38 - Passing follwing data name Brinda
+22:19:40,118 ERROR co.pragra.selframework.listeners.ScreenShotListener<strong>{1}</strong>:45 - Test Case with test name tc1 failed
+22:19:40,743 ERROR co.pragra.selframework.listeners.ScreenShotListener<strong>{1}</strong>:45 - Test Case with test name tc1 failed
