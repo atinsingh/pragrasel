@@ -3,7 +3,9 @@ package co.pragra.selframework.listeners;
 import co.pragra.selframework.drivermanger.DriverManager;
 import co.pragra.selframework.utils.Utils;
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +21,7 @@ import java.nio.file.Paths;
 
 public class ScreenShotListener implements ITestListener {
 
-    Logger logger = Logger.getLogger(ScreenShotListener.class);
+    Logger logger = LogManager.getLogger(ScreenShotListener.class);
 
     @Override
     public void onTestStart(ITestResult result) {

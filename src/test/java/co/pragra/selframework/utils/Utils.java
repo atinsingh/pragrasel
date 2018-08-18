@@ -1,5 +1,7 @@
 package co.pragra.selframework.utils;
 
+import co.pragra.selframework.config.TestConfig;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
